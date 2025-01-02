@@ -11,6 +11,8 @@ This project demonstrates a PX4-based drone simulation integrated with ROS 2, Ga
   - An image processing node (`image_processor`)  
   - A goal producer node (`goal_producer`)  
   - A drone control node (`drone_control`)
+  - The px4_msgs library (`px4_msg`) to communicate with the simulation
+  - A custom goal message (`goal_msg`) to map pixel into goal
 
 ## Table of Contents
 
@@ -40,6 +42,8 @@ This project demonstrates a PX4-based drone simulation integrated with ROS 2, Ga
 - **OpenCV**  
 - **Ament build tools**: `colcon`
 
+For a complete guide of the setup refers to https://docs.px4.io/main/en/ros2/user_guide.html#installation-setup
+
 ---
 
 ## Building the Simulation
@@ -49,3 +53,28 @@ This project demonstrates a PX4-based drone simulation integrated with ROS 2, Ga
    ```shell
    cd PX4-Autopilot
    make px4_sitl gazebo
+
+2. **Establish ros2-px4 connection**:
+
+   ```shell
+   cd folder/Micro-XRCE-DDS-Agent
+   MicroXRCEAgent udp4 -p 8888
+
+##Running the project
+
+3. **Launch QGroundControl**:
+
+   ```shell
+   cd folder
+   ./AppQGroundControl.Image
+
+4. **Launch the project**:
+
+   ```shell
+   cd folder/project
+   colcon build
+   #source ros2 and gazebo if they aren't
+   . install/setup.bash
+   ros2 launch CPSP_Project Project.launch.py
+
+
