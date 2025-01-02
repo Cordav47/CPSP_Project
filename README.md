@@ -19,13 +19,14 @@ This project demonstrates a PX4-based drone simulation integrated with ROS 2, Ga
 1. [Project Structure](#project-structure)  
 2. [Prerequisites](#prerequisites)  
 3. [Building the Simulation](#building-the-simulation)  
-4. [Running the Project](#running-the-project)  
-5. [Nodes Description](#nodes-description)  
-6. [License](#license)
+4. [Nodes Description](#nodes-description)  
+5. [License](#license)
 
 ---
 
 ## Project Structure
+
+. ├── PX4-Autopilot/ ├── ros2_ws/ │ ├── src/ │ │ └── drone_project/ │ │ ├── drone_project/ │ │ │ ├── init.py │ │ │ ├── risk_image_publisher.py │ │ │ ├── standard_image_publisher.py │ │ │ ├── image_processor.py │ │ │ ├── goal_producer.py │ │ │ ├── drone_control.py │ │ │ ├── My_CV_library.py │ │ ├── launch/ │ │ │ └── drone_launch.py │ │ ├── package.xml │ │ ├── setup.py ├── QGroundControl/ └── ...
 
 
 ---
@@ -60,7 +61,6 @@ For a complete guide of the setup refers to https://docs.px4.io/main/en/ros2/use
    cd folder/Micro-XRCE-DDS-Agent
    MicroXRCEAgent udp4 -p 8888
 
-##Running the project
 
 3. **Launch QGroundControl**:
 
